@@ -46,6 +46,29 @@ Live at https://www.pbnationals.com.
 
 ## Session Log
 
+### 2026-05-21 — Removed all on-site ticket pricing (Pardoe feedback)
+
+- Connor Pardoe's note: **don't show ticket pricing on the site** — pricing
+  should only appear on Tixr when fans go to buy. Removed the $45/$95/$250 tiers
+  from `tickets.html` (replaced with a "Pricing on Tixr" pill) and the homepage
+  teaser (replaced with a "View Tickets" link). Buy buttons still go to Tixr.
+- **Rule for future edits: never display ticket prices on this site.**
+- Committed `60dde7b`, pushed, redeploying. Task to source real Tixr prices is
+  now moot — we intentionally show no prices.
+
+### 2026-05-21 — Shipped to production
+
+- Committed (`6f437f2`) and pushed all 6 pages + CLAUDE.md to `main`. **Live and
+  confirmed at https://www.pbnationals.com** (homepage + interior pages incl.
+  `/programming.html` all serving).
+- **Repo moved orgs:** GitHub now redirects `bryce-pickleball/pb-nationals` →
+  **`Gull-Stack/pb-nationals`**. The push worked via redirect, but the local
+  `origin` remote still points at the old URL — consider
+  `git remote set-url origin https://github.com/Gull-Stack/pb-nationals.git`.
+- Pages: source = `main` / root, custom domain serving fine. (Pages API reported
+  `cname: null` but the domain resolves correctly — no CNAME file in the repo.)
+- Still open: real Tixr ticket data (placeholder tiers $45/$95/$250 are live now).
+
 ### 2026-05-21 — Added Programming page; ticket section blocked on Tixr data
 
 - Built `programming.html` (**NC Programming 2026**) from content Bryce provided:
