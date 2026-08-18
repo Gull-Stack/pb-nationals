@@ -52,13 +52,17 @@ Live at https://www.pbnationals.com.
   https://www.ppatour.com/events/2026/veolia-pickleball-national-championships/
   The event lives on the main tour site; this microsite is done.
 - Added `vercel.json` with one catch-all redirect (`/(.*)` → the event page,
-  **307 temporary**, so the choice is reversible and browsers do not hard-cache
-  it). Change `"permanent": true` if we want a 308 and SEO consolidation.
+  **308 permanent**, for SEO consolidation into ppatour.com. Bryce chose
+  permanent over temporary the same day.
+- ⚠ A 308 is cached hard by browsers. Next year's Nationals page will have a
+  different URL, and anyone who hit pbnationals.com in 2026 keeps landing on the
+  **2026** page until they clear their cache. If we re-point this domain later,
+  expect stale redirects and plan for it.
 - Correction to the notes above: the site is **not** on GitHub Pages. It is the
   Vercel project `pb-nationals` on the **Pickleball HQ** team, with DNS at
   Cloudflare. Push to `main` and Vercel deploys.
 - The HTML pages stay in the repo as an archive. Nothing serves them now.
-- Verified live: `/`, `/tickets.html`, and an unknown path all return 307 to the
+- Verified live: `/`, `/tickets.html`, and an unknown path all return 308 to the
   event page. The apex `pbnationals.com` hops to `www` first, then out.
 
 ### 2026-05-21 — Removed all on-site ticket pricing (Pardoe feedback)

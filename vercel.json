@@ -3,7 +3,7 @@
     {
       "source": "/(.*)",
       "destination": "https://www.ppatour.com/events/2026/veolia-pickleball-national-championships/",
-      "permanent": false
+      "permanent": true
     }
   ]
 }
